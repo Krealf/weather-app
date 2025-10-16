@@ -1,5 +1,3 @@
-import path from 'path'
-
 export default {
   assetsInclude: ['**/*.woff2', '**/*.woff', '**/*.ttf'],
   build: {
