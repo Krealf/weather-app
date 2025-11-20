@@ -1,4 +1,6 @@
 export default {
+  base: '/weather-app/',
+
   assetsInclude: ['**/*.woff2', '**/*.woff', '**/*.ttf'],
   build: {
     assetsDir: 'assets',
@@ -12,3 +14,4 @@ export default {
     },
   },
 }
+
