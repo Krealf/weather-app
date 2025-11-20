@@ -1,0 +1,44 @@
+@use '../helpers' as *;
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: rem(32);
+
+  &.is-empty {
+    display: none;
+  }
+
+  &__current {
+    background: url('../../assets/images/cloud-bg-desktop.svg') center/cover
+      no-repeat;
+    border-radius: rem(20);
+  }
+
+  @include mobile-above {
+    display: grid;
+    grid-template-columns: 1fr 35%;
+    grid-template-areas:
+      'current hourly'
+      'details hourly'
+      'daily hourly';
+    gap: rem(24);
+
+    .panel__current {
+      grid-area: current;
+    }
+    .panel__details {
+      grid-area: details;
+    }
+    .panel__daily {
+      grid-area: daily;
+    }
+    .panel__hourly {
+      grid-area: hourly;
+    }
+
+    .details__list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

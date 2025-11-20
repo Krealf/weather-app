@@ -1,0 +1,35 @@
+@use '../helpers' as *;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(64);
+  padding-top: rem(48);
+  padding-bottom: rem(64);
+
+  &__general {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    &-link {
+      display: flex;
+      align-items: center;
+      column-gap: rem(10);
+
+      @include mobile {
+        column-gap: rem(7);
+      }
+    }
+  }
+
+  &__hero {
+    font-family: var(--font-family-accent);
+    font-weight: bold;
+    font-size: rem(52);
+    text-align: center;
+  }
+}

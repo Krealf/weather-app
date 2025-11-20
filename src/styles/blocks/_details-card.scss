@@ -1,0 +1,21 @@
+@use '../helpers' as *;
+
+.details-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(24);
+  padding: rem(20);
+  background-color: var(--color-blue-30);
+  border-radius: rem(12);
+  border: solid #{rem(1)} var(--color-blue-10);
+
+  &__heading {
+    font-size: rem(18);
+    color: var(--color-gray);
+  }
+
+  &__body {
+    font-size: rem(32);
+    font-weight: 300;
+  }
+}

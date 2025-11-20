@@ -4,12 +4,541 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link
-      rel="stylesheet"
-      href="./src/styles/main.scss"
-    >
+    <link rel="stylesheet" href="./src/styles/main.scss" />
   </head>
   <body>
+    <header class="header">
+      <div class="header__general container">
+        <a class="header__logo-link logo" href="/">
+          <img
+            src="./src/assets/images/logo.svg"
+            alt=""
+            width="197"
+            height="40"
+            loading="lazy"
+          />
+        </a>
+        <div class="header__settings">
+          <div class="select units skeleton" data-js-select-units>
+            <button
+              class="select__button"
+              type="button"
+              aria-haspopup="dialog"
+              aria-expanded="false"
+              aria-controls="units-dialog"
+              data-js-select-units-button
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                class="select__button-icon--gear"
+              >
+                <path
+                  d="M13.7188 7.21875C13.75 7.625 13.75 8.03125 13.7188 8.40625L14.7188 9C15 9.15625 15.1562 9.5 15.0625 9.84375C14.7188 11.1562 14 12.3438 13.0625 13.3125C12.8125 13.5312 12.4375 13.5938 12.1562 13.4375L11.1562 12.8438C10.9062 13.0312 10.4375 13.3125 10.125 13.4375V14.5938C10.125 14.9375 9.90625 15.2188 9.5625 15.3125C8.28125 15.6562 6.875 15.6562 5.59375 15.3125C5.28125 15.25 5.03125 14.9062 5.03125 14.5938V13.4375C4.71875 13.3125 4.25 13.0312 4 12.8438L3 13.4375C2.71875 13.5938 2.34375 13.5312 2.09375 13.3125C1.15625 12.3438 0.4375 11.1562 0.09375 9.84375C0 9.5 0.15625 9.15625 0.4375 9L1.4375 8.40625C1.40625 8.25 1.40625 8 1.40625 7.8125C1.40625 7.65625 1.40625 7.40625 1.4375 7.21875L0.4375 6.65625C0.15625 6.5 0 6.15625 0.09375 5.8125C0.4375 4.5 1.15625 3.3125 2.09375 2.34375C2.34375 2.125 2.71875 2.0625 3 2.21875L4 2.8125C4.25 2.625 4.71875 2.34375 5.03125 2.21875V1.0625C5.03125 0.71875 5.25 0.4375 5.59375 0.34375C6.875 0 8.28125 0 9.5625 0.34375C9.875 0.40625 10.125 0.75 10.125 1.0625V2.21875C10.4375 2.34375 10.9062 2.625 11.1562 2.8125L12.1562 2.21875C12.4375 2.0625 12.8125 2.125 13.0625 2.34375C14 3.3125 14.7188 4.5 15.0625 5.8125C15.1562 6.15625 15 6.5 14.7188 6.65625L13.7188 7.21875ZM12.0625 9.21875C12.3125 7.90625 12.3125 7.75 12.0625 6.4375L13.4375 5.65625C13.25 5.09375 12.75 4.28125 12.375 3.84375L11 4.625C10.0312 3.78125 9.875 3.6875 8.625 3.25V1.65625C8.34375 1.625 7.875 1.5625 7.59375 1.5625C7.28125 1.5625 6.8125 1.625 6.53125 1.65625V3.25C5.28125 3.6875 5.15625 3.78125 4.15625 4.625L2.78125 3.84375C2.3125 4.375 1.96875 5 1.71875 5.65625L3.09375 6.4375C2.84375 7.75 2.84375 7.90625 3.09375 9.21875L1.71875 10C1.90625 10.5625 2.40625 11.375 2.78125 11.8125L4.15625 11.0312C5.125 11.875 5.28125 11.9688 6.53125 12.4062V14C6.8125 14.0312 7.28125 14.0938 7.59375 14.0938C7.875 14.0938 8.34375 14.0312 8.625 14V12.4062C9.875 11.9688 10 11.875 11 11.0312L12.375 11.8125C12.75 11.375 13.25 10.5625 13.4375 10L12.0625 9.21875ZM7.59375 4.8125C9.21875 4.8125 10.5938 6.1875 10.5938 7.8125C10.5938 9.46875 9.21875 10.8125 7.59375 10.8125C5.9375 10.8125 4.59375 9.46875 4.59375 7.8125C4.59375 6.1875 5.9375 4.8125 7.59375 4.8125ZM7.59375 9.3125C8.40625 9.3125 9.09375 8.65625 9.09375 7.8125C9.09375 7 8.40625 6.3125 7.59375 6.3125C6.75 6.3125 6.09375 7 6.09375 7.8125C6.09375 8.65625 6.75 9.3125 7.59375 9.3125Z"
+                  fill="white"
+                />
+              </svg>
+              <span class="select__label">Units</span>
+              <svg
+                width="12"
+                height="7"
+                viewBox="0 0 12 7"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+                class="select__button-icon--arrow"
+              >
+                <path
+                  d="M5.37891 6.60938L0.175781 1.44141C0 1.30078 0 1.01953 0.175781 0.84375L0.878906 0.175781C1.05469 0 1.30078 0 1.47656 0.175781L5.69531 4.32422L9.87891 0.175781C10.0547 0 10.3359 0 10.4766 0.175781L11.1797 0.84375C11.3555 1.01953 11.3555 1.30078 11.1797 1.44141L5.97656 6.60938C5.80078 6.78516 5.55469 6.78516 5.37891 6.60938Z"
+                  fill="white"
+                />
+              </svg>
+            </button>
+            <div
+              class="select__dialog"
+              role="dialog"
+              aria-label="Settings units"
+              data-js-select-units-dialog
+            >
+              <div class="option-group" role="group">
+                <div class="option__buttons">
+                  <button
+                    class="option__button"
+                    type="button"
+                    data-js-select-units-switch-metrics
+                  >
+                    Switch to Imperial
+                  </button>
+                </div>
+              </div>
+              <div
+                class="option-group"
+                role="group"
+                aria-labelledby="temperature-heading"
+              >
+                <div class="option__heading" id="temperature-heading">
+                  Temperature
+                </div>
+                <div class="option__buttons">
+                  <button
+                    class="option__button is-selected"
+                    type="button"
+                    aria-pressed="true"
+                    data-js-select-units-temperature-celsius
+                  >
+                    <span class="option__text">Celsius (°C)</span>
+                  </button>
+                  <button
+                    class="option__button"
+                    type="button"
+                    aria-pressed="false"
+                    data-js-select-units-temperature-fahrenheit
+                  >
+                    <span class="option__text">Fahrenheit (°F)</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="option-group is-expanded"
+                role="group"
+                aria-labelledby="wind-heading"
+              >
+                <div class="option__heading" id="wind-heading">Wind Speed</div>
+                <div class="option__buttons">
+                  <button
+                    class="option__button is-selected"
+                    type="button"
+                    aria-pressed="true"
+                    data-js-select-units-wind-km
+                  >
+                    <span class="option__text">km/h</span>
+                  </button>
+                  <button
+                    class="option__button"
+                    type="button"
+                    aria-pressed="false"
+                    data-js-select-units-wind-mph
+                  >
+                    <span class="option__text">mph</span>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="option-group"
+                role="group"
+                aria-labelledby="precipitation-heading"
+              >
+                <div class="option__heading" id="precipitation-heading">
+                  Precipitation
+                </div>
+                <div class="option__buttons">
+                  <button
+                    class="option__button is-selected"
+                    type="button"
+                    aria-pressed="true"
+                    data-js-select-units-precipitation-millimeters
+                  >
+                    <span class="option__text">Millimeters (mm)</span>
+                  </button>
+                  <button
+                    class="option__button"
+                    type="button"
+                    aria-pressed="false"
+                    data-js-select-units-precipitation-inches
+                  >
+                    <span class="option__text">Inches (in)</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__body container">
+        <h1 class="header__hero hero">How’s the sky looking today?</h1>
+      </div>
+    </header>
+    <main>
+      <section class="dashboard" data-js-weather data-loading="false">
+        <div class="dashboard__inner container">
+          <div class="search" data-js-search>
+            <form class="search__form" data-js-search-form>
+              <div class="search__input-wrapper">
+                <svg
+                  width="21"
+                  height="21"
+                  viewBox="0 0 21 21"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="search__icon"
+                >
+                  <path
+                    d="M19.8438 18.3203C20.0391 18.5156 20.0391 18.8281 19.8438 18.9844L18.9453 19.8828C18.7891 20.0781 18.4766 20.0781 18.2812 19.8828L13.5547 15.1562C13.4766 15.0391 13.4375 14.9219 13.4375 14.8047V14.2969C11.9922 15.5078 10.1562 16.25 8.125 16.25C3.63281 16.25 0 12.6172 0 8.125C0 3.67188 3.63281 0 8.125 0C12.5781 0 16.25 3.67188 16.25 8.125C16.25 10.1562 15.4688 12.0312 14.2578 13.4375H14.7656C14.8828 13.4375 15 13.5156 15.1172 13.5938L19.8438 18.3203ZM8.125 14.375C11.5625 14.375 14.375 11.6016 14.375 8.125C14.375 4.6875 11.5625 1.875 8.125 1.875C4.64844 1.875 1.875 4.6875 1.875 8.125C1.875 11.6016 4.64844 14.375 8.125 14.375Z"
+                    fill="#D4D3D9"
+                  />
+                </svg>
+                <input
+                  class="search__input"
+                  placeholder="Search for a place..."
+                  type="text"
+                  data-js-search-input
+                />
+                <ul class="search__list" data-js-search-list></ul>
+              </div>
+              <button
+                type="submit"
+                class="search__button"
+                data-js-search-button
+              >
+                Search
+              </button>
+            </form>
+            <div class="search__error" data-js-search-error>
+              No search result found!
+            </div>
+          </div>
+          <div class="panel is-empty" data-js-weather-panel>
+            <div class="panel__current current skeleton">
+              <div class="current__now">
+                <div class="current__city" data-js-weather-city>
+                  Berlin, Germany
+                </div>
+                <time
+                  datetime=""
+                  class="current__time"
+                  data-js-weather-current-time
+                >
+                  Tuesday, Aug 5, 2025
+                </time>
+              </div>
+              <div class="current__forecast">
+                <img
+                  class="current__icon"
+                  src="./src/assets/icons/weather/sunny.svg"
+                  alt=""
+                  width="120"
+                  height="120"
+                  loading="lazy"
+                  data-js-weather-current-icon
+                />
+                <div class="current__temperature">
+                  <span data-js-weather-current-temperature>20°</span>
+                </div>
+              </div>
+            </div>
+            <div class="panel__details details">
+              <ul class="details__list">
+                <li class="details__item">
+                  <div class="details-card skeleton">
+                    <div class="details-card__heading">Feels Like</div>
+                    <div class="details-card__body">
+                      <span data-js-weather-current-apparent-temperature></span>
+                    </div>
+                  </div>
+                </li>
+                <li class="details__item">
+                  <div class="details-card skeleton">
+                    <div class="details-card__heading">Humidity</div>
+                    <div class="details-card__body">
+                      <span data-js-weather-current-humidity></span>
+                    </div>
+                  </div>
+                </li>
+                <li class="details__item">
+                  <div class="details-card skeleton">
+                    <div class="details-card__heading">Wind</div>
+                    <div class="details-card__body">
+                      <span data-js-weather-current-wind></span>
+                    </div>
+                  </div>
+                </li>
+                <li class="details__item">
+                  <div class="details-card skeleton">
+                    <div class="details-card__heading">Precipitation</div>
+                    <div class="details-card__body">
+                      <span data-js-weather-current-precipitation></span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="panel__daily daily skeleton">
+              <h2 class="daily__heading">Daily forecast</h2>
+              <ul class="daily__list" data-js-weather-daily-list></ul>
+            </div>
+            <aside class="panel__hourly hourly">
+              <div class="hourly__header">
+                <h2 class="hourly__heading">Hourly forecast</h2>
+                <div class="select" data-js-select-date>
+                  <button
+                    class="select__button select__button-date skeleton"
+                    type="button"
+                    aria-haspopup="dialog"
+                    aria-expanded="false"
+                    data-js-select-date-button
+                  >
+                    <span class="select__label" data-js-select-date-label>–</span>
+                    <svg
+                      width="12"
+                      height="7"
+                      viewBox="0 0 12 7"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="select__button-icon--arrow"
+                    >
+                      <path
+                        d="M5.37891 6.60938L0.175781 1.44141C0 1.30078 0 1.01953 0.175781 0.84375L0.878906 0.175781C1.05469 0 1.30078 0 1.47656 0.175781L5.69531 4.32422L9.87891 0.175781C10.0547 0 10.3359 0 10.4766 0.175781L11.1797 0.84375C11.3555 1.01953 11.3555 1.30078 11.1797 1.44141L5.97656 6.60938C5.80078 6.78516 5.55469 6.78516 5.37891 6.60938Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    class="select__dialog select__dialog-date"
+                    role="dialog"
+                    aria-label="Settings date"
+                    data-js-select-date-dialog
+                  >
+                    <button class="option__button" type="button" data-date="" data-js-select-date-option>
+                      Monday
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="hourly__body">
+                <ul class="hourly__list" data-js-weather-hourly-list>
+                  <li class="hourly__item">
+                    <div class="hourly-card skeleton">
+                      <div class="hourly-card__body">
+                        <img
+                          class="hourly-card__icon"
+                          src="./src/assets/icons/weather/sunny.svg"
+                          alt=""
+                          width="40"
+                          height="40"
+                          loading="lazy"
+                        />
+                        <time datetime="" class="hourly-card__time">3 PM</time>
+                      </div>
+                      <div class="hourly-card__temperature">20°</div>
+                    </div>
+                  </li>
+                  <li class="hourly__item">
+                    <div class="hourly-card skeleton">
+                      <div class="hourly-card__body">
+                        <img
+                          class="hourly-card__icon"
+                          src="./src/assets/icons/weather/sunny.svg"
+                          alt=""
+                          width="40"
+                          height="40"
+                          loading="lazy"
+                        />
+                        <time datetime="" class="hourly-card__time">3 PM</time>
+                      </div>
+                      <div class="hourly-card__temperature">20°</div>
+                    </div>
+                  </li>
+                  <li class="hourly__item">
+                    <div class="hourly-card skeleton">
+                      <div class="hourly-card__body">
+                        <img
+                          class="hourly-card__icon"
+                          src="./src/assets/icons/weather/sunny.svg"
+                          alt=""
+                          width="40"
+                          height="40"
+                          loading="lazy"
+                        />
+                        <time datetime="" class="hourly-card__time">3 PM</time>
+                      </div>
+                      <div class="hourly-card__temperature">20°</div>
+                    </div>
+                  </li>
+                  <li class="hourly__item">
+                    <div class="hourly-card skeleton">
+                      <div class="hourly-card__body">
+                        <img
+                          class="hourly-card__icon"
+                          src="./src/assets/icons/weather/sunny.svg"
+                          alt=""
+                          width="40"
+                          height="40"
+                          loading="lazy"
+                        />
+                        <time datetime="" class="hourly-card__time">3 PM</time>
+                      </div>
+                      <div class="hourly-card__temperature">20°</div>
+                    </div>
+                  </li>
+                  <li class="hourly__item">
+                    <div class="hourly-card skeleton">
+                      <div class="hourly-card__body">
+                        <img
+                          class="hourly-card__icon"
+                          src="./src/assets/icons/weather/sunny.svg"
+                          alt=""
+                          width="40"
+                          height="40"
+                          loading="lazy"
+                        />
+                        <time datetime="" class="hourly-card__time">3 PM</time>
+                      </div>
+                      <div class="hourly-card__temperature">20°</div>
+                    </div>
+                  </li>
+                  <li class="hourly__item">
+                    <div class="hourly-card skeleton">
+                      <div class="hourly-card__body">
+                        <img
+                          class="hourly-card__icon"
+                          src="./src/assets/icons/weather/sunny.svg"
+                          alt=""
+                          width="40"
+                          height="40"
+                          loading="lazy"
+                        />
+                        <time datetime="" class="hourly-card__time">3 PM</time>
+                      </div>
+                      <div class="hourly-card__temperature">20°</div>
+                    </div>
+                  </li>
+                  <li class="hourly__item">
+                    <div class="hourly-card skeleton">
+                      <div class="hourly-card__body">
+                        <img
+                          class="hourly-card__icon"
+                          src="./src/assets/icons/weather/sunny.svg"
+                          alt=""
+                          width="40"
+                          height="40"
+                          loading="lazy"
+                        />
+                        <time datetime="" class="hourly-card__time">3 PM</time>
+                      </div>
+                      <div class="hourly-card__temperature">20°</div>
+                    </div>
+                  </li>
+                  <li class="hourly__item">
+                    <div class="hourly-card skeleton">
+                      <div class="hourly-card__body">
+                        <img
+                          class="hourly-card__icon"
+                          src="./src/assets/icons/weather/sunny.svg"
+                          alt=""
+                          width="40"
+                          height="40"
+                          loading="lazy"
+                        />
+                        <time datetime="" class="hourly-card__time">3 PM</time>
+                      </div>
+                      <div class="hourly-card__temperature">20°</div>
+                    </div>
+                  </li>
+                  <li class="hourly__item">
+                    <div class="hourly-card skeleton">
+                      <div class="hourly-card__body">
+                        <img
+                          class="hourly-card__icon"
+                          src="./src/assets/icons/weather/sunny.svg"
+                          alt=""
+                          width="40"
+                          height="40"
+                          loading="lazy"
+                        />
+                        <time datetime="" class="hourly-card__time">3 PM</time>
+                      </div>
+                      <div class="hourly-card__temperature">20°</div>
+                    </div>
+                  </li>
+                  <li class="hourly__item">
+                    <div class="hourly-card skeleton">
+                      <div class="hourly-card__body">
+                        <img
+                          class="hourly-card__icon"
+                          src="./src/assets/icons/weather/sunny.svg"
+                          alt=""
+                          width="40"
+                          height="40"
+                          loading="lazy"
+                        />
+                        <time datetime="" class="hourly-card__time">3 PM</time>
+                      </div>
+                      <div class="hourly-card__temperature">20°</div>
+                    </div>
+                  </li>
+                  <li class="hourly__item">
+                    <div class="hourly-card skeleton">
+                      <div class="hourly-card__body">
+                        <img
+                          class="hourly-card__icon"
+                          src="./src/assets/icons/weather/sunny.svg"
+                          alt=""
+                          width="40"
+                          height="40"
+                          loading="lazy"
+                        />
+                        <time datetime="" class="hourly-card__time">3 PM</time>
+                      </div>
+                      <div class="hourly-card__temperature">20°</div>
+                    </div>
+                  </li>
+                  <li class="hourly__item">
+                    <div class="hourly-card skeleton">
+                      <div class="hourly-card__body">
+                        <img
+                          class="hourly-card__icon"
+                          src="./src/assets/icons/weather/sunny.svg"
+                          alt=""
+                          width="40"
+                          height="40"
+                          loading="lazy"
+                        />
+                        <time datetime="" class="hourly-card__time">3 PM</time>
+                      </div>
+                      <div class="hourly-card__temperature">20°</div>
+                    </div>
+                  </li>
+                  <li class="hourly__item">
+                    <div class="hourly-card skeleton">
+                      <div class="hourly-card__body">
+                        <img
+                          class="hourly-card__icon"
+                          src="./src/assets/icons/weather/sunny.svg"
+                          alt=""
+                          width="40"
+                          height="40"
+                          loading="lazy"
+                        />
+                        <time datetime="" class="hourly-card__time">3 PM</time>
+                      </div>
+                      <div class="hourly-card__temperature">20°</div>
+                    </div>
+                  </li>
+                  <li class="hourly__item">
+                    <div class="hourly-card skeleton">
+                      <div class="hourly-card__body">
+                        <img
+                          class="hourly-card__icon"
+                          src="./src/assets/icons/weather/sunny.svg"
+                          alt=""
+                          width="40"
+                          height="40"
+                          loading="lazy"
+                        />
+                        <time datetime="" class="hourly-card__time">3 PM</time>
+                      </div>
+                      <div class="hourly-card__temperature">20°</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
     <script type="module" src="/src/js/main.js"></script>
   </body>
 </html>

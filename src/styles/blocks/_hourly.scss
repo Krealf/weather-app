@@ -1,0 +1,42 @@
+@use '../helpers' as *;
+
+.hourly {
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(16);
+  background-color: var(--color-blue-30);
+  border-radius: rem(20);
+  max-height: rem(725);
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(24) rem(40) 0 rem(40);
+  }
+
+  &__body {
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  &__heading {
+    font-size: rem(20);
+    font-weight: 600;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+
+    row-gap: rem(16);
+    padding: 0 rem(24) rem(24);
+    justify-content: space-between;
+
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
+}

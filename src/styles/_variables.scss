@@ -1,0 +1,25 @@
+@use 'helpers' as *;
+
+:root {
+  --color-blue-10: #3c3b5e;
+  --color-blue-20: #302f4a;
+  --color-blue-30: #262540;
+  --color-blue-40: #02012c;
+
+  --color-gray: #d4d3d9;
+  --color-gray-alt: #acacb7;
+
+  --color-white: #ffffff;
+
+  --color-orange: #ff820a;
+
+  --color-blue: #2b1b9c;
+  --color-cyan: #4658d9;
+
+  --font-family-base: 'DM Sans', sans-serif;
+  --font-family-accent: 'Bricolage Grotesque', sans-serif;
+
+  --container-width: #{rem(1216)};
+  --container-padding-x: #{rem(16)};
+  --transition-duration: 0.2s;
+}

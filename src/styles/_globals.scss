@@ -1,0 +1,49 @@
+@use "helpers" as *;
+
+body {
+  @include fluid-text(20, 16);
+
+  font-family: var(--font-family-base);
+  letter-spacing: -0.03em;
+  color: var(--color-white);
+  background-color: var(--color-blue-40);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  color: var(--color-white);
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: inherit;
+
+  &[class] {
+    text-decoration: none;
+  }
+}
+
+:focus-visible {
+  outline: rem(2) solid var(--color-white);
+  outline-offset: rem(4);
+  transition-duration: 0s !important;
+}

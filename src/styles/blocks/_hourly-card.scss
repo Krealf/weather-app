@@ -1,0 +1,26 @@
+@use '../helpers' as *;
+
+.hourly-card {
+  background-color: var(--color-blue-20);
+  display: flex;
+  border-radius: rem(8);
+  padding: rem(10) rem(12);
+  align-items: center;
+  justify-content: space-between;
+
+  &__body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: rem(8);
+  }
+
+  &__time {
+    font-weight: 500;
+  }
+
+  &__temperature {
+    font-size: rem(18);
+    font-weight: 500;
+  }
+}

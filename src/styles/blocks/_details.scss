@@ -1,0 +1,13 @@
+@use '../helpers' as *;
+
+.details {
+  &__list {
+    display: flex;
+    gap: rem(24);
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex-grow: 1;
+  }
+}

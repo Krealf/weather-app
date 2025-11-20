@@ -1,0 +1,93 @@
+@use '../helpers' as *;
+
+.select {
+  position: relative;
+  max-width: rem(214);
+  font-family: var(--font-family-base);
+
+  &__button {
+    border: none;
+    padding: rem(12) rem(16);
+    background-color: transparent;
+    color: var(--color-white);
+    border-radius: rem(6);
+    font-size: rem(16);
+    line-height: 120%;
+    font-weight: 500;
+    cursor: pointer;
+    transition-duration: var(--transition-duration);
+    background-color: var(--color-blue-30);
+    display: inline-flex;
+    align-items: center;
+    column-gap: rem(10);
+    user-select: none;
+
+    &-date {
+      background-color: var(--color-blue-10);
+
+      @include hover() {
+        background-color: var(--color-blue-20);
+      }
+    }
+
+    @include hover {
+      background-color: var(--color-blue-10);
+    }
+
+    &.is-expanded .select__button-icon--arrow {
+      transform: rotate(180deg);
+    }
+
+    &-icon {
+      &--gear {
+        @include square(#{rem(16)});
+      }
+
+      &--arrow {
+        width: rem(12);
+        height: rem(18);
+
+        transition: transform 0.25s ease;
+      }
+    }
+
+  }
+
+  &__dialog {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: rem(214);
+    background-color: var(--color-blue-30);
+    margin-top: rem(10);
+    border-radius: rem(12);
+    padding: rem(6) rem(8);
+    z-index: 3;
+
+    border: solid #{rem(1)} var(--color-blue-10);
+    box-shadow: 0 #{rem(8)} #{rem(16)} 0 rgba(2, 1, 44, 0.32);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-60%);
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+
+    &-date {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(4);
+      padding: rem(8)
+    }
+
+    &.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+  }
+}

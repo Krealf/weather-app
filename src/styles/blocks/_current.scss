@@ -1,0 +1,54 @@
+@use '../helpers' as *;
+
+.current {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: rem(80) rem(24);
+
+  @include mobile-s {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__now {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(12);
+  }
+
+  &__city {
+    font-size: rem(28);
+    font-weight: bold;
+  }
+
+  &__time {
+    opacity: 0.8;
+    font-size: rem(18);
+  }
+
+  &__forecast {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: rem(20);
+  }
+
+  &__icon {
+    @include square(120);
+
+    display: none;
+
+    @include tablet-above {
+      display: block;
+    }
+  }
+
+  &__temperature {
+    font-size: rem(96);
+    font-weight: 600;
+    font-style: italic;
+  }
+}

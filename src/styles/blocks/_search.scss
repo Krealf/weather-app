@@ -1,0 +1,150 @@
+@use '../helpers' as *;
+
+.search {
+  position: relative;
+
+  &__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: rem(16);
+
+
+    @include mobile-s {
+      flex-wrap: wrap;
+      row-gap: rem(12);
+    }
+  }
+
+  &__input-wrapper {
+    max-width: rem(526);
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    @include square(#{rem(20)});
+
+    position: absolute;
+    left: rem(20);
+    color: white;
+
+    pointer-events: none;
+  }
+
+  &__input {
+    background-color: var(--color-blue-30);
+    border: none;
+    border-radius: rem(12);
+    width: 100%;
+    height: rem(56);
+    padding: rem(16) rem(16) rem(16) rem(50);
+    color: inherit;
+
+    &::placeholder {
+      color: var(--color-gray);
+    }
+    @include hover {
+      background-color: var(--color-blue-20);
+    }
+
+    &-wrapper {
+      position: relative;
+    }
+  }
+
+  &__button {
+    @include flex-center;
+
+    background-color: var(--color-cyan);
+    border-radius: rem(12);
+    padding: rem(16) rem(24);
+    border: none;
+    color: var(--color-white);
+    height: rem(56);
+    user-select: none;
+
+    @include hover() {
+      background-color: var(--color-blue);
+    }
+
+    @include mobile-s {
+      width: 100%;
+    }
+
+    &:focus {
+      outline-color: var(--color-cyan);
+    }
+  }
+
+  &__list {
+    top: calc(100% + #{rem(10)});
+    position: absolute;
+    max-width: rem(526);
+    background-color: var(--color-blue-30);
+    left: 0;
+    border-radius: rem(12);
+    width: 100%;
+    overflow-y: auto;
+    max-height: rem(184);
+    padding: rem(8);
+    flex-direction: column;
+    row-gap: rem(4);
+
+    display: none;
+
+    &.is-open {
+      display: flex;
+    }
+  }
+
+  &__item {
+    &:has(.search__info--progress) {
+      padding: rem(10);
+      display: flex;
+      align-items: center;
+      column-gap: rem(10);
+    }
+  }
+
+  &__option {
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    color: var(--color-white);
+    padding: rem(10) rem(8);
+    border-radius: rem(8);
+    display: block;
+    width: 100%;
+    text-align: left;
+    vertical-align: center;
+    cursor: pointer;
+
+    @include hover() {
+      background-color: var(--color-blue-20);
+    }
+  }
+
+  &__error {
+    display: none;
+    position: absolute;
+
+    left: 50%;
+    top: calc(100% + #{rem(48)});
+
+    color: var(--color-white);
+    text-align: center;
+    color: var(--color-white);
+    font-size: rem(28);
+
+    font-weight: bold;
+    transform: translateX(-50%);
+
+
+    &--visible {
+      display: block;
+    }
+  }
+}

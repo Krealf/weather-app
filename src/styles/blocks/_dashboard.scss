@@ -1,0 +1,10 @@
+@use '../helpers' as *;
+
+.dashboard {
+  padding-bottom: rem(80);
+
+  &__inner {
+    display: grid;
+    row-gap: rem(48);
+  }
+}

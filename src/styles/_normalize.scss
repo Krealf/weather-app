@@ -159,7 +159,7 @@ label {
   атрибут fill со значением 'none' или начинается с 'url')
  */
 :where([fill]:not(
-  [fill="none"],
+  [fill="currentColor"],
   [fill^="url"]
 )) {
   fill: currentcolor;
